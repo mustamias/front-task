@@ -1,0 +1,57 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser != null">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+
+      <div class="card">
+        <div class="card-header">Favorite Movies</div>
+        <div class="card-body">
+
+
+          <div class="card" *ngFor= "let movie of favoriteMovie"  >
+            <img class="card-img-top" src="{{movie.poster}}" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">{{movie.title}}</h4>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+    <div class="col-8">
+
+      <div class="card">
+        <div class="card-header">Find Movies</div>
+        <div class="card-body">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search" (keyup.enter)="find()" [(ngModel)]="text" >
+
+          <div class="card" *ngIf="findMovie !=null" >
+            <img class="card-img-top" src="{{findMovie.poster}}" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">{{findMovie.title}}</h4>
+              <p class="card-text"> {{findMovie.plot}}</p>
+              <a href="#"  class="btn btn-primary" (click)="addMovie()">Add to Fav</a>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
