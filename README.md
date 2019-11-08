@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Prerequisites
 Angular 7.3.1 
 node 10.x
-npm 6.4.1 or 
+npm 6.4.1 
 
 ## install package
 
